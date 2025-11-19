@@ -1,0 +1,71 @@
+<div class="custom-banner-wrapper">
+  <div class="left-banner">
+    {% if section.settings.left_banner != blank %}
+        <img src="{{ section.settings.left_banner | image_url: width: 1200 }}" alt="">
+     {% else %}
+      <img src="assets/banner-1.jpg" alt="Default left banner">
+    {% endif %}
+  </div>
+
+  <div class="right-banners">
+    <div class="small-banner">
+      {% if section.settings.right_top_banner != blank %}
+         <img src="{{ section.settings.right_top_banner | image_url: width: 600 }}" alt="">
+      {% else %}
+         <img src="assets/banner-2.jpg" alt="Default small top">
+      {% endif %}
+    </div>
+    <div class="small-banner">
+      {% if section.settings.right_bottom_banner != blank %}
+        <img src="{{ section.settings.right_top_banner | image_url: width: 600 }}" alt="">
+      {% else %}
+         <img src="assets/banner-3.jpg" alt="Default small top">
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="{{ 'custom-banner.css' | asset_url }}">
+
+{% schema %}
+{
+  "name": "Custom Banner Split",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "left_banner",
+      "label": "Left big banner"
+    },
+    {
+      "type": "url",
+      "id": "left_banner_link",
+      "label": "Left big banner link"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_top_banner",
+      "label": "Right top small banner"
+    },
+    {
+      "type": "url",
+      "id": "right_top_banner_link",
+      "label": "Right top small banner link"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_bottom_banner",
+      "label": "Right bottom small banner"
+    },
+    {
+      "type": "url",
+      "id": "right_bottom_banner_link",
+      "label": "Right bottom small banner link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Banner Split"
+    }
+  ]
+}
+{% endschema %}
