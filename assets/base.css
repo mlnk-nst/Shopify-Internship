@@ -3595,3 +3595,18 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+
+
+/* fonts */
+
+.h2{
+  font-family: var(--font-heading, 'Beatrice', sans-serif);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+  text-transform: none;
+  margin-bottom: 24px;
+  color: #1F727C;
+  text-align: center;
+}

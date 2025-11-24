@@ -17,7 +17,7 @@
     </div>
     <div class="small-banner">
       {% if section.settings.right_bottom_banner != blank %}
-        <img src="{{ section.settings.right_top_banner | image_url: width: 600 }}" alt="">
+      <img src="{{ section.settings.right_bottom_banner | image_url: width: 600 }}" alt=""> 
       {% else %}
          <img src="assets/banner-3.jpg" alt="Default small top">
       {% endif %}

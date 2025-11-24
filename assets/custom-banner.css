@@ -1,4 +1,4 @@
-.banner-wrapper {
+.custom-banner-wrapper {
   display: flex;
   gap: 10px;
   overflow: hidden;
@@ -35,28 +35,29 @@
   width: 100%;
   height: 100%;     
   object-fit: cover;
-}@media (max-width: 768px) {
+}
+@media (max-width: 768px) {
   .custom-banner-wrapper {
-    flex-direction: column;   /* вертикальний стовпчик */
-    overflow-x: hidden;       /* скролу немає */
+    flex-direction: column;  
+    overflow-x: hidden;      
     height: auto;
-    max-height: none;         /* прибираємо обмеження, якщо потрібно */
+    max-height: none;         
     gap: 10px;
   }
 
   .left-banner,
   .right-banners {
-    width: 100%;             /* банери займають всю ширину */
-    flex: none;              /* не тягнути по flex */
+    width: 100%;           
+    flex: none;             
   }
 
   .right-banners {
-    flex-direction: column;   /* праві банери один під одним */
+    flex-direction: column;   
     gap: 5px;
   }
 
   .small-banner {
-    width: 100%;             /* кожен маленький банер займає всю ширину */
+    width: 100%;            
     height: auto;
   }
 
@@ -67,3 +68,8 @@
     object-fit: cover;
   }
 }
+
+.custom-banner-wrapper {
+  margin-bottom: 60px;
+}
+

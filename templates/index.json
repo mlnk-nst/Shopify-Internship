@@ -4,6 +4,26 @@
     "custom_banner": {
       "type": "custom-banner"
     },
+     "best_sellers": {
+      "type": "main-bestsellers",
+      "settings": {
+        "title": "Best Sellers",
+        "heading_size": "h2",
+        "collection": "best-sellers",
+        "products_to_show": 6,
+        "columns_desktop": 3,
+        "columns_mobile": "1",
+        "enable_desktop_slider": false,
+        "swipe_on_mobile": true,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_vendor": true,
+        "show_rating": true,
+        "quick_add": "button",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -35,6 +55,7 @@
   },
   "order": [
     "custom_banner",
+    "best_sellers",
     "featured_collection"
   ]
 }

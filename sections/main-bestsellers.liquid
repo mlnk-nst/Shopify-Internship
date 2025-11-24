@@ -1,0 +1,65 @@
+<div class="best-sellers-section page-width section-{{ section.id }}-padding">
+
+  {% if section.settings.title != blank %}
+    <h2 class="h2 {{ section.settings.heading_size }}">
+      {{ section.settings.title }}
+    </h2>
+  {% endif %}
+
+  {% assign selected_collection = section.settings.collection | default: "best-sellers" %}
+  {% assign best_sellers = collections[selected_collection].products %}
+
+    <div class="best-sellers-container">
+    {% for product in best_sellers %}
+      <div class="product-card-wrapper">
+        {% render 'custom-product-card', product: product %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Best Sellers",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Section title",
+      "default": "Best Sellers"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        { "value": "h2", "label": "H2" },
+        { "value": "h1", "label": "H1" }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "collection",
+      "id": "collection", 
+      "label": "Choose collection"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 36
+    }
+  ]
+}
+{% endschema %}
