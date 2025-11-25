@@ -187,12 +187,11 @@
     scroll-snap-align: start;
   }
    .shop-now-button {
-    left: 10px !important;
-    opacity: 1 !important;
+    display: none ;
   }
   
   .icon-container {
-    display: none; 
+    display: flex; 
   }
 }
 
