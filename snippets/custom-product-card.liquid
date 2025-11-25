@@ -1,5 +1,13 @@
 <div class="product-card" data-product-handle="{{ product.handle }}">
-  <div class="image-container">
+    <div class="image-container">
+    {% assign product_created_date = product.created_at | date: '%s' %}
+    {% assign now_date = 'now' | date: '%s' %}
+    {% assign difference = now_date | minus: product_created_date %}
+    {% assign difference_in_days = difference | divided_by: 86400 %}
+    
+    {% if difference_in_days < 30 %} 
+      <div class="new-label">New</div>
+    {% endif %}
     <a href="{{ product.url }}">
       <img 
         class="product-image primary-image" 
