@@ -7,7 +7,9 @@
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
     {{ 'custom-product-card.css' | asset_url | stylesheet_tag }}
-      {{ 'color-switcher.js' | asset_url | script_tag }}
+    {{ 'custom-fonts.css' | asset_url | stylesheet_tag }}
+    {{ 'color-switcher.js' | asset_url | script_tag }}
+    {{ 'shop-now.js' | asset_url | script_tag }}
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}

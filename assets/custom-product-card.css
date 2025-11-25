@@ -141,6 +141,28 @@
   font-family: 'Beatrice', sans-serif;
 }
 
+.shop-now-button {
+  position: absolute;
+  bottom: 10px;
+  left: -100%;
+  background: #000000;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-family: 'Cambon', sans-serif;
+  font-weight: 300;
+  transition: left 0.3s ease;
+  z-index: 4;
+  white-space: nowrap;
+}
+
+.shop-now-button:hover {
+  background: #1F727C;
+}
+.shop-now-button.show {
+  left: 10px; 
+}
+
 @media (max-width: 767px) {
   .best-sellers-container {
     display: grid;
@@ -163,6 +185,14 @@
   
   .product-card-wrapper {
     scroll-snap-align: start;
+  }
+   .shop-now-button {
+    left: 10px !important;
+    opacity: 1 !important;
+  }
+  
+  .icon-container {
+    display: none; 
   }
 }
 
