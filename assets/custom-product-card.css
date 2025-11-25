@@ -9,7 +9,7 @@
 .best-sellers-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  gap: 20px;
 }
 
 .product-title {
@@ -41,12 +41,14 @@
   position: relative;
   display: inline-block;
   overflow: hidden;
+  height: auto; 
+  min-height: 300px;
 }
 
 .image-container img {
   width: 100%;
-  height: 300px;
-  object-fit: cover;
+  height: auto;
+  object-fit: scale-down;
   display: block;
 }
 
@@ -82,8 +84,8 @@
 
 .product-image {
   width: 100%;
-  height: 300px;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
   display: block;
   transition: opacity 0.3s ease;
 }
@@ -93,6 +95,7 @@
   top: 0;
   left: 0;
   opacity: 0;
+  object-fit: contain;
 }
 
 .image-container:hover .primary-image {
@@ -147,10 +150,11 @@
   left: -100%;
   background: #000000;
   color: white;
-  padding: 10px 20px;
+  padding: 11px 28px;
   text-decoration: none;
   font-family: 'Cambon', sans-serif;
   font-weight: 300;
+  font-size: 15px;
   transition: left 0.3s ease;
   z-index: 4;
   white-space: nowrap;
