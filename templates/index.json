@@ -1,10 +1,9 @@
-
 {
   "sections": {
     "custom_banner": {
       "type": "custom-banner"
     },
-     "best_sellers": {
+    "best_sellers": {
       "type": "main-bestsellers",
       "settings": {
         "title": "Best Sellers",
@@ -22,6 +21,12 @@
         "quick_add": "button",
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "promo_banner": {
+      "type": "promo-banner",
+      "settings": {
+        "shop_now_link": "/collections/all"
       }
     },
     "featured_collection": {
@@ -56,6 +61,7 @@
   "order": [
     "custom_banner",
     "best_sellers",
+    "promo_banner",
     "featured_collection"
   ]
 }
