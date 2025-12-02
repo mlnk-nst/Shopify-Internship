@@ -1,4 +1,6 @@
-<div class="best-sellers-section page-width section-{{ section.id }}-padding">
+{{ 'component-new-arrived.css' | asset_url | stylesheet_tag }}
+
+<div class="new-arrived-section page-width section-{{ section.id }}-padding">
 
   {% if section.settings.title != blank %}
     <h2 class="h2 {{ section.settings.heading_size }}">
@@ -6,27 +8,41 @@
     </h2>
   {% endif %}
 
-  {% assign selected_collection = section.settings.collection | default: "best-sellers" %}
-  {% assign best_sellers = collections[selected_collection].products %}
-  
-  {% comment %} Обмеження кількості товарів {% endcomment %}
-  {% if section.settings.products_to_show < best_sellers.size %}
-    {% assign best_sellers = best_sellers | slice: 0, section.settings.products_to_show %}
+  {% assign selected_collection = section.settings.collection %}
+  {% if selected_collection == blank %}
+    {% assign selected_collection = "new-arrived" %}
   {% endif %}
-
-  {% if best_sellers.size > 0 %}
-    <div class="best-sellers-container">
-      {% for product in best_sellers %}
-        <div class="product-card-wrapper">
-          {% render 'custom-product-card', product: product %}
-        </div>
-      {% endfor %}
-    </div>
+  
+  {% assign products = collections[selected_collection].products %}
+  
+  {% if section.settings.products_to_show < products.size %}
+    {% assign products = products | slice: 0, section.settings.products_to_show %}
+  {% endif %}
+  
+  {% if products.size > 0 %}
+    {% if section.settings.enable_slider %}
+      <div class="new-arrived-slider">
+        {% for product in products %}
+          <div class="slide-item">
+            <div class="product-card-wrapper">  
+              {% render 'custom-product-card', product: product %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="new-arrived-grid"> 
+        {% for product in products %}
+          <div class="product-card-wrapper"> 
+            {% render 'custom-product-card', product: product %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
   {% else %}
     <p>No products in this collection.</p>
   {% endif %}
 
-  {% comment %} Кнопка View Collection {% endcomment %}
   {% if section.settings.show_view_collection and collections[selected_collection] %}
     <div class="view-all-btn-wrapper">
       <a href="{{ collections[selected_collection].url }}" class="view-all-btn">
@@ -39,27 +55,21 @@
 
 {% schema %}
 {
-  "name": "Best Sellers",
+  "name": "New Arrived",
   "settings": [
     {
       "type": "inline_richtext",
       "id": "title",
       "label": "Section title",
-      "default": "Best Sellers"
+      "default": "New Arrived"
     },
     {
       "type": "select",
       "id": "heading_size",
       "label": "Heading size",
       "options": [
-        {
-          "value": "h2",
-          "label": "H2"
-        },
-        {
-          "value": "h1",
-          "label": "H1"
-        }
+        { "value": "h2", "label": "H2" },
+        { "value": "h1", "label": "H1" }
       ],
       "default": "h2"
     },
@@ -79,8 +89,15 @@
     },
     {
       "type": "checkbox",
+      "id": "enable_slider",
+      "label": "Enable slider",
+      "default": false
+    },
+  
+    {
+      "type": "checkbox",
       "id": "show_view_collection",
-      "label": "Show 'View Collection' button",
+      "label": "Show button",
       "default": true
     },
     {
@@ -92,27 +109,27 @@
     {
       "type": "range",
       "id": "padding_top",
-      "label": "Padding top",
       "min": 0,
       "max": 100,
       "step": 4,
-      "default": 36
+      "default": 36,
+      "label": "Padding top"
     },
     {
       "type": "range",
       "id": "padding_bottom",
-      "label": "Padding bottom",
       "min": 0,
       "max": 100,
       "step": 4,
-      "default": 36
+      "default": 36,
+      "label": "Padding bottom"
     }
   ],
   "presets": [
     {
-      "name": "Best Sellers",
+      "name": "New Arrived",
       "settings": {
-        "title": "Best Sellers",
+        "title": "New Arrived",
         "show_view_collection": true,
         "button_text": "View All Products"
       }

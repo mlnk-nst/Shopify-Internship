@@ -39,3 +39,14 @@
   border: 1px solid #ccc;
   cursor: pointer;
 }
+
+.view-all-btn {
+  color:#1F727C;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-family: 'Cambon', sans-serif;
+}
+
+.view-all-btn:hover {
+  color: #145A61;
+}
