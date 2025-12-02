@@ -5,7 +5,7 @@
     {% assign difference = now_date | minus: product_created_date %}
     {% assign difference_in_days = difference | divided_by: 86400 %}
     
-    {% if difference_in_days < 30 %} 
+    {% if product.metafields.custom.new_arrival%} 
       <div class="new-label">New</div>
     {% endif %}
     <a href="{{ product.url }}">
