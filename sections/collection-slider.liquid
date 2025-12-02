@@ -1,0 +1,238 @@
+<div class="collections-slider-section page-width section-{{ section.id }}-padding" 
+     data-section-id="{{ section.id }}"
+     data-autoplay="{{ section.settings.autoplay }}"
+     data-autoplay-speed="{{ section.settings.autoplay_speed }}">
+  
+  <div class="collections-slider-container">
+    <div class="collections-slider" id="slider-{{ section.id }}">
+      {% for block in section.blocks %}
+        <div class="collection-slide">
+          {% if block.settings.collection != blank %}
+            <a href="{{ block.settings.collection.url }}" class="collection-link">
+          {% else %}
+            <div class="collection-link">
+          {% endif %}
+          
+          <div class="collection-image-wrapper">
+            {% if block.settings.image != blank %}
+              <img 
+                src="{{ block.settings.image | img_url: '600x' }}" 
+                alt="{{ block.settings.image.alt | escape }}"
+                loading="lazy"
+                width="600"
+                height="600"
+                class="collection-image"
+              >
+            {% elsif block.settings.collection != blank and block.settings.collection.featured_image != blank %}
+              <img 
+                src="{{ block.settings.collection.featured_image | img_url: '600x' }}" 
+                alt="{{ block.settings.collection.title | escape }}"
+                loading="lazy"
+                width="600"
+                height="600"
+                class="collection-image"
+              >
+            {% else %}
+              <div class="collection-image placeholder">
+                {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+            {% endif %}
+          </div>
+          
+          <div class="collection-info">
+            <h3 class="collection-title">
+              {% if block.settings.custom_title != blank %}
+                {{ block.settings.custom_title }}
+              {% elsif block.settings.collection != blank %}
+                {{ block.settings.collection.title }}
+              {% else %}
+                {{ 'Collection ' | append: forloop.index }}
+              {% endif %}
+            </h3>
+          </div>
+          
+          {% if block.settings.collection != blank %}
+            </a>
+          {% else %}
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  
+  {% if section.blocks.size > 1 %}
+    <div class="slider-pagination mobile-only" id="pagination-{{ section.id }}">
+      {% for block in section.blocks %}
+        <button class="pagination-dot {% if forloop.first %}active{% endif %}" 
+                data-index="{{ forloop.index0 }}"
+                aria-label="Go to slide {{ forloop.index }}">
+          <span class="visually-hidden">Slide {{ forloop.index }}</span>
+        </button>
+      {% endfor %}
+    </div>
+  {% endif %}
+  
+  {% if section.blocks.size == 0 %}
+    <div class="empty-state">
+      <p>Click "Add collection" to add collections to the slider.</p>
+    </div>
+  {% endif %}
+  
+</div>
+
+{{ 'collection-slider.css' | asset_url | stylesheet_tag }}
+{{ 'collections-slider.js' | asset_url | script_tag }}
+
+<style>
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+  
+  @media (min-width: 768px) {
+    .section-{{ section.id }}-padding .collection-slide {
+      {% case section.settings.slides_to_show %}
+        {% when 1 %}
+          width: 100%;
+        {% when 2 %}
+          width: calc(50% - 10px);
+        {% when 3 %}
+          width: calc(33.333% - 14px);
+        {% when 4 %}
+          width: calc(25% - 15px);
+        {% when 5 %}
+          width: calc(20% - 16px);
+        {% else %}
+          width: calc(33.333% - 14px);
+      {% endcase %}
+    }
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Collections Slider",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 12,
+  "settings": [
+    {
+      "type": "range",
+      "id": "slides_to_show",
+      "label": "Slides to show (desktop)",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "Show navigation arrows",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots",
+      "label": "Show pagination dots",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Auto-rotate slides",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "Autoplay speed (seconds)",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Collection image",
+          "info": "Recommended: 600x600px"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Choose collection"
+        },
+        {
+          "type": "text",
+          "id": "custom_title",
+          "label": "Custom title",
+          "info": "Optional. Leave empty to use collection title"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collections Slider",
+      "blocks": [
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        }
+      ],
+      "settings": {
+        "slides_to_show": 3,
+        "show_arrows": true,
+        "show_dots": true,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  ]
+}
+{% endschema %}

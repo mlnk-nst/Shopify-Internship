@@ -1,0 +1,73 @@
+<div class="product-card" data-product-handle="{{ product.handle }}">
+    <div class="image-container">
+    {% assign product_created_date = product.created_at | date: '%s' %}
+    {% assign now_date = 'now' | date: '%s' %}
+    {% assign difference = now_date | minus: product_created_date %}
+    {% assign difference_in_days = difference | divided_by: 86400 %}
+    
+    {% if product.metafields.custom.new_arrival%} 
+      <div class="new-label">New</div>
+    {% endif %}
+    <a href="{{ product.url }}">
+      <img 
+        class="product-image primary-image" 
+        src="{{ product.featured_image | img_url: 'master'}}" 
+        alt="{{ product.title }}"
+        data-color="default"
+      >
+      {% if product.images.size > 1 %}
+        <img 
+          class="product-image secondary-image" 
+          src="{{ product.images[1] | img_url: 'master'}}" 
+          alt="{{ product.title }}"
+        >
+      {% else %}
+        <img 
+          class="product-image secondary-image" 
+          src="{{ product.featured_image | img_url: 'master'}}" 
+          alt="{{ product.title }}"
+        >
+      {% endif %}
+    </a>
+      <a href="{{ product.url }}" class="shop-now-button">SHOP NOW</a>
+    <div class="icon-container">
+      <div class="three-dots-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  
+  <a href="{{ product.url }}">
+    <h3 class="product-title">{{ product.title }}</h3>
+    <p class="price">{{ product.price | money }}</p>
+  </a>
+
+  {% for option in product.options_with_values %}
+    {% if option.name == 'Color' and option.values.size > 0 %}
+    <div class="color-swatches">
+      {% for value in option.values %}
+        {% assign color_variant = product.variants | where: 'option1', value | first %}
+        {% if color_variant and color_variant.featured_image %}
+          <span 
+            class="swatch" 
+            style="background-color: {{ value | downcase }};" 
+            title="{{ value }}"
+            data-color="{{ value | handleize }}"
+            data-image="{{ color_variant.featured_image |img_url: 'master' }}"
+          ></span>
+        {% else %}
+          <span 
+            class="swatch" 
+            style="background-color: {{ value | downcase }};" 
+            title="{{ value }}"
+            data-color="{{ value | handleize }}"
+            data-image="{{ product.featured_image | img_url: 'master' }}"
+          ></span>
+        {% endif %}
+      {% endfor %}
+    </div>
+    {% endif %}
+  {% endfor %}
+</div>

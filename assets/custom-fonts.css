@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Cambon';
+    src: local('Cambon Extra Light'), local('Cambon-Extra-Light'),
+        url('Cambon-ExtraLight.woff2') format('woff2'),
+        url('Cambon-ExtraLight.woff') format('woff'),
+        url('Cambon-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+  }
+
+@font-face {
+  font-family: 'Beatrice';
+  src: url('{{ "BeatriceRegular.woff2" | asset_url }}') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

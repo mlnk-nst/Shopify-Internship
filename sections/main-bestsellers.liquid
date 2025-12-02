@@ -1,0 +1,122 @@
+<div class="best-sellers-section page-width section-{{ section.id }}-padding">
+
+  {% if section.settings.title != blank %}
+    <h2 class="h2 {{ section.settings.heading_size }}">
+      {{ section.settings.title }}
+    </h2>
+  {% endif %}
+
+  {% assign selected_collection = section.settings.collection | default: "best-sellers" %}
+  {% assign best_sellers = collections[selected_collection].products %}
+  
+  {% comment %} Обмеження кількості товарів {% endcomment %}
+  {% if section.settings.products_to_show < best_sellers.size %}
+    {% assign best_sellers = best_sellers | slice: 0, section.settings.products_to_show %}
+  {% endif %}
+
+  {% if best_sellers.size > 0 %}
+    <div class="best-sellers-container">
+      {% for product in best_sellers %}
+        <div class="product-card-wrapper">
+          {% render 'custom-product-card', product: product %}
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No products in this collection.</p>
+  {% endif %}
+
+  {% comment %} Кнопка View Collection {% endcomment %}
+  {% if section.settings.show_view_collection and collections[selected_collection] %}
+    <div class="view-all-btn-wrapper">
+      <a href="{{ collections[selected_collection].url }}" class="view-all-btn">
+        {{ section.settings.button_text }}
+      </a>
+    </div>
+  {% endif %}
+
+</div>
+
+{% schema %}
+{
+  "name": "Best Sellers",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Section title",
+      "default": "Best Sellers"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h1",
+          "label": "H1"
+        }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Choose collection"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "label": "Products to show",
+      "min": 2,
+      "max": 20,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_collection",
+      "label": "Show 'View Collection' button",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "View Collection"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Best Sellers",
+      "settings": {
+        "title": "Best Sellers",
+        "show_view_collection": true,
+        "button_text": "View All Products"
+      }
+    }
+  ]
+}
+{% endschema %}
