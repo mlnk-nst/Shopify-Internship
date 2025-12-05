@@ -212,8 +212,14 @@
 /* Мобільна версія */
 @media (max-width: 768px) {
   .header-container {
-    height: 60px;
     padding: 0 16px;
+  }
+  
+  .icon-link[title="Пошук"],
+  .icon-link[title="Акаунт"],
+  .icon-link[title="Увійти"],
+  .icon-link[title="Уподобання"] {
+    display: none !important;
   }
   
   .header-logo {
