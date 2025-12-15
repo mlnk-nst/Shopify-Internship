@@ -1,0 +1,369 @@
+{{ 'custom-footer.css' | asset_url | stylesheet_tag }}
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-top">
+      <div class="footer-section logo-section">
+        <div class="logo"> 
+            <a href="{{ routes.root_url }}" class="logo-link">
+           <svg width="184" height="46" viewBox="0 0 184 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+             <path d="M75.011 46H26.0791C26.8286 41.7528 28.3638 37.7051 30.596 34.0907C32.8283 30.4763 35.7135 27.3669 39.0849 24.9419C42.4563 22.5168 46.2472 20.8243 50.2387 19.962C54.2302 19.0998 58.3431 19.0848 62.34 19.918C62.9645 20.4976 63.5716 21.0864 64.1613 21.758C70.33 28.2509 74.1675 36.8252 75.011 46ZM75.9303 5.88382e-05H10.8844C9.45666 -0.00478372 8.04208 0.289336 6.72173 0.865559C5.40138 1.44178 4.20122 2.28877 3.19006 3.35798C2.1789 4.42719 1.37662 5.69759 0.829202 7.09635C0.281787 8.49512 7.19338e-06 9.99473 1.44917e-05 11.5092V34.5092C-0.00273684 36.2879 0.386316 38.0427 1.13615 39.6336C2.83415 32.8462 6.20473 26.6606 10.9017 21.712C17.6652 14.5585 26.7338 10.3909 36.2794 10.0495C45.825 9.708 55.1376 13.2181 62.34 19.872C67.4892 20.9371 72.2972 23.3774 76.3096 26.9625C80.322 30.5475 83.4063 35.1588 85.2709 40.3604C86.2568 38.5915 86.7751 36.5734 86.7713 34.5184V11.5184C86.7736 10.0067 86.4949 8.50931 85.9511 7.11194C85.4073 5.71457 84.6091 4.44465 83.6022 3.37483C82.5953 2.30501 81.3994 1.45628 80.083 0.8772C78.7666 0.298121 77.3554 5.69032e-05 75.9303 5.88382e-05ZM104.759 17.8756C104.322 18.6951 103.682 19.3725 102.908 19.8345C102.135 20.2966 101.257 20.5259 100.37 20.4976C99.6977 20.5198 99.0286 20.3873 98.4089 20.1094C97.7891 19.8315 97.2334 19.4147 96.7797 18.8876C95.8182 17.6885 95.325 16.145 95.4007 14.5728C95.3285 13.0068 95.8217 11.4704 96.7797 10.2764C97.2114 9.75353 97.7455 9.33689 98.3447 9.05563C98.9438 8.77437 99.5937 8.63527 100.249 8.64805C100.904 8.62465 101.555 8.75712 102.156 9.03571C102.756 9.31431 103.29 9.73198 103.718 10.258C104.662 11.4658 105.145 13.0056 105.071 14.5728V15.2904H97.699C97.7511 17.1304 98.7137 18.3632 100.301 18.3632C100.974 18.3973 101.633 18.1533 102.139 17.6824C102.517 17.3309 102.839 16.9179 103.094 16.4588L104.759 17.8756ZM102.859 13.4688C102.872 13.1061 102.813 12.7445 102.686 12.4075C102.559 12.0705 102.366 11.7655 102.121 11.5123C101.876 11.2591 101.583 11.0633 101.262 10.9376C100.941 10.8119 100.599 10.759 100.257 10.7824C99.5842 10.7824 98.9383 11.0649 98.4606 11.5681C97.9829 12.0714 97.7123 12.7547 97.7077 13.4688H102.859ZM106.372 20.1756V4.73805H108.722V20.1756H106.372ZM111.437 10.2396C111.878 9.73233 112.415 9.32865 113.013 9.05454C113.61 8.78044 114.255 8.64197 114.906 8.64805C115.558 8.63496 116.205 8.77024 116.803 9.0448C117.402 9.31935 117.938 9.72678 118.375 10.2396C119.363 11.432 119.87 12.9878 119.789 14.5728C119.878 16.161 119.384 17.7242 118.41 18.9336C117.97 19.442 117.433 19.8446 116.835 20.1143C116.236 20.3841 115.591 20.5148 114.941 20.4976C114.282 20.514 113.627 20.3832 113.019 20.1138C112.411 19.8443 111.863 19.4422 111.411 18.9336C110.436 17.7242 109.942 16.161 110.032 14.5728C109.948 12.9891 110.452 11.4335 111.437 10.2396ZM117.56 14.5728C117.56 12.2084 116.502 10.8284 114.958 10.8284C113.414 10.8284 112.304 12.1808 112.304 14.5728C112.304 16.9648 113.362 18.3172 114.958 18.3172C116.554 18.3172 117.56 16.9464 117.56 14.5728ZM122.928 21.1968C123.098 21.7801 123.446 22.2871 123.917 22.6383C124.388 22.9896 124.955 23.1653 125.53 23.138C125.853 23.1735 126.18 23.1314 126.486 23.0149C126.792 22.8983 127.069 22.7103 127.297 22.4648C127.526 22.2192 127.699 21.9223 127.804 21.5962C127.91 21.27 127.944 20.9229 127.906 20.5804V19.1452H127.863C127.541 19.5838 127.125 19.9351 126.65 20.1702C126.176 20.4053 125.655 20.5175 125.131 20.4976C124.488 20.5137 123.849 20.3794 123.26 20.1044C122.671 19.8293 122.146 19.4202 121.723 18.906C120.777 17.6926 120.3 16.1444 120.387 14.5728C120.313 13.0009 120.806 11.4581 121.766 10.258C122.177 9.74838 122.688 9.34019 123.263 9.06208C123.839 8.78397 124.464 8.64266 125.096 8.64805C125.642 8.61711 126.187 8.72839 126.683 8.97215C127.178 9.21591 127.611 9.58475 127.941 10.0464H127.984V8.97005H130.179V20.24C130.219 20.9223 130.126 21.6061 129.903 22.2477C129.681 22.8893 129.334 23.4745 128.886 23.966C127.973 24.8503 126.766 25.3135 125.53 25.254C124.617 25.3078 123.71 25.0608 122.933 24.5471C122.157 24.0333 121.55 23.2777 121.194 22.3836L122.928 21.1968ZM127.915 13.2572C127.913 12.9255 127.848 12.5976 127.723 12.2935C127.598 11.9893 127.416 11.7154 127.188 11.4882C126.96 11.261 126.691 11.0854 126.397 10.972C126.103 10.8586 125.79 10.8097 125.478 10.8284C123.743 10.8284 122.668 12.1808 122.668 14.5728C122.668 16.9648 123.743 18.3172 125.478 18.3172C125.785 18.3397 126.092 18.2961 126.383 18.1892C126.673 18.0824 126.94 17.9143 127.168 17.6952C127.395 17.4761 127.579 17.2104 127.707 16.9141C127.836 16.6179 127.906 16.2972 127.915 15.9712V13.2572ZM132.087 7.13005V4.73805H134.428V7.13005H132.087ZM132.087 20.1756V8.97005H134.428V20.1756H132.087ZM145.096 16.2196C144.68 18.9336 143.127 20.4976 140.629 20.4976C139.97 20.5163 139.315 20.3866 138.706 20.117C138.098 19.8474 137.55 19.4441 137.1 18.9336C136.131 17.7209 135.641 16.1592 135.729 14.5728C135.658 13.0085 136.148 11.4736 137.1 10.2764C137.535 9.75784 138.069 9.34415 138.668 9.06325C139.266 8.78235 139.914 8.64077 140.569 8.64805C141.656 8.61412 142.714 9.02661 143.522 9.79957C144.33 10.5725 144.825 11.6463 144.905 12.7972L142.772 13.1744C142.546 11.6104 141.809 10.8284 140.551 10.8284C138.938 10.8284 137.949 12.2084 137.949 14.5728C137.949 16.9372 138.921 18.3172 140.551 18.3172C141.792 18.3172 142.529 17.4524 142.772 15.7136L145.096 16.2196ZM104.767 36.4596C104.351 39.1736 102.79 40.7376 100.301 40.7376C99.6416 40.7575 98.9859 40.6283 98.3773 40.3586C97.7687 40.089 97.2211 39.685 96.771 39.1736C95.7997 37.9628 95.3085 36.3997 95.4007 34.8128C95.3285 33.2468 95.8217 31.7104 96.7797 30.5164C97.214 29.9969 97.7485 29.5825 98.3471 29.3016C98.9457 29.0206 99.5943 28.8795 100.249 28.888C101.337 28.8518 102.396 29.2635 103.204 30.0369C104.012 30.8103 104.507 31.8855 104.585 33.0372L102.452 33.4144C102.238 31.8504 101.501 31.0684 100.24 31.0684C98.6183 31.0684 97.5863 32.4484 97.5863 34.8128C97.5863 37.1772 98.5663 38.5572 100.24 38.5572C101.472 38.5572 102.209 37.6924 102.452 35.9536L104.767 36.4596ZM106.684 30.4796C107.125 29.9714 107.662 29.5671 108.259 29.2929C108.857 29.0187 109.502 28.8808 110.153 28.888C110.805 28.8731 111.453 29.0076 112.051 29.2823C112.65 29.5569 113.186 29.9653 113.622 30.4796C114.61 31.672 115.118 33.2278 115.036 34.8128C115.124 36.3992 114.634 37.9609 113.666 39.1736C113.225 39.6801 112.688 40.0814 112.089 40.351C111.491 40.6206 110.846 40.7524 110.197 40.7376C109.538 40.7528 108.883 40.6215 108.275 40.3521C107.668 40.0828 107.119 39.6813 106.667 39.1736C105.695 37.9632 105.203 36.3998 105.296 34.8128C105.205 33.2328 105.7 31.6777 106.675 30.4796H106.684ZM112.807 34.8128C112.807 32.4484 111.749 31.0684 110.205 31.0684C108.661 31.0684 107.543 32.4208 107.543 34.8128C107.543 37.2048 108.601 38.5572 110.197 38.5572C111.792 38.5572 112.816 37.1864 112.816 34.8128H112.807ZM116.337 40.4156V29.21H118.41V30.2864H118.453C118.764 29.8408 119.172 29.4813 119.641 29.2383C120.111 28.9953 120.629 28.8759 121.152 28.8904C121.674 28.9048 122.186 29.0526 122.643 29.3213C123.1 29.5899 123.489 29.9715 123.778 30.4336C124.101 29.9529 124.528 29.5616 125.023 29.2926C125.518 29.0236 126.067 28.8849 126.623 28.888C129.034 28.888 130.569 30.4152 130.569 32.7612V40.4156H128.479V33.3132C128.479 31.8504 127.82 31.1144 126.519 31.1144C126.256 31.0848 125.991 31.1172 125.742 31.2093C125.493 31.3014 125.266 31.4509 125.078 31.647C124.889 31.8432 124.744 32.0811 124.653 32.3437C124.562 32.6064 124.527 32.8872 124.55 33.166V40.4156H122.434V33.3132C122.471 33.0325 122.449 32.7466 122.371 32.4758C122.292 32.2049 122.158 31.9558 121.979 31.7459C121.799 31.5361 121.578 31.3707 121.332 31.2616C121.085 31.1525 120.819 31.1022 120.552 31.1144C120.289 31.0867 120.024 31.1203 119.776 31.213C119.527 31.3056 119.3 31.455 119.112 31.6506C118.923 31.8462 118.777 32.0832 118.685 32.3451C118.592 32.6069 118.554 32.8871 118.574 33.166V40.4156H116.337ZM132.494 40.4156V29.21H134.567V30.2864H134.61C134.921 29.8408 135.329 29.4813 135.799 29.2383C136.269 28.9953 136.787 28.8759 137.309 28.8904C137.832 28.9048 138.343 29.0526 138.8 29.3213C139.257 29.5899 139.647 29.9715 139.936 30.4336C140.257 29.9542 140.683 29.5637 141.176 29.2947C141.67 29.0258 142.217 28.8863 142.772 28.888C145.183 28.888 146.718 30.4152 146.718 32.7612V40.4156H144.628V33.3132C144.628 31.8504 143.968 31.1144 142.667 31.1144C142.405 31.0848 142.14 31.1172 141.891 31.2093C141.641 31.3014 141.415 31.4509 141.226 31.647C141.038 31.8432 140.893 32.0811 140.802 32.3437C140.711 32.6064 140.675 32.8872 140.699 33.166V40.4156H138.583V33.3132C138.621 33.0277 138.598 32.7367 138.517 32.4616C138.435 32.1865 138.297 31.9343 138.111 31.7234C137.926 31.5125 137.698 31.3484 137.445 31.243C137.192 31.1376 136.92 31.0937 136.649 31.1144C136.386 31.0867 136.121 31.1203 135.872 31.213C135.624 31.3056 135.397 31.455 135.208 31.6506C135.02 31.8462 134.874 32.0832 134.781 32.3451C134.688 32.6069 134.651 32.8871 134.671 33.166V40.4156H132.494ZM157.307 38.1156C156.871 38.9358 156.231 39.6137 155.458 40.0759C154.684 40.538 153.806 40.7669 152.919 40.7376C152.246 40.7597 151.577 40.6273 150.957 40.3494C150.338 40.0715 149.782 39.6547 149.328 39.1276C148.367 37.9285 147.873 36.385 147.949 34.8128C147.877 33.2468 148.37 31.7104 149.328 30.5164C149.76 29.9935 150.294 29.5769 150.893 29.2956C151.492 29.0143 152.142 28.8752 152.797 28.888C153.453 28.8606 154.105 28.9913 154.706 29.2701C155.307 29.549 155.841 29.9688 156.266 30.498C157.213 31.7049 157.699 33.2445 157.628 34.8128V35.5304H150.247C150.308 37.3704 151.262 38.6032 152.849 38.6032C153.522 38.6373 154.181 38.3933 154.688 37.9224C155.068 37.5734 155.39 37.1599 155.642 36.6988L157.307 38.1156ZM155.408 33.7088C155.421 33.3461 155.362 32.9845 155.234 32.6475C155.107 32.3104 154.915 32.0055 154.67 31.7523C154.424 31.4991 154.132 31.3033 153.811 31.1776C153.49 31.0518 153.147 30.999 152.806 31.0224C152.137 31.0364 151.498 31.3233 151.024 31.8236C150.549 32.3239 150.274 32.9991 150.256 33.7088H155.408ZM158.92 40.4156V29.21H161.08V30.36C161.297 29.9435 161.615 29.5956 162 29.3516C162.386 29.1076 162.825 28.9762 163.274 28.9708C163.597 28.9711 163.916 29.0432 164.211 29.1824L163.916 31.556C163.634 31.4632 163.343 31.4075 163.049 31.3904C161.817 31.3904 161.201 32.3104 161.201 34.1504V40.388L158.92 40.4156ZM173.82 36.4596C173.404 39.1736 171.851 40.7376 169.354 40.7376C168.695 40.7563 168.039 40.6266 167.431 40.357C166.822 40.0874 166.275 39.6841 165.824 39.1736C164.852 37.9632 164.36 36.3998 164.454 34.8128C164.378 33.2479 164.868 31.7113 165.824 30.5164C166.259 29.9978 166.794 29.5841 167.392 29.3032C167.99 29.0223 168.639 28.8807 169.293 28.888C170.382 28.8495 171.442 29.2604 172.251 30.0343C173.059 30.8081 173.554 31.8846 173.629 33.0372L171.496 33.4144C171.282 31.8504 170.545 31.0684 169.284 31.0684C167.671 31.0684 166.63 32.4484 166.63 34.8128C166.63 37.1772 167.61 38.5572 169.284 38.5572C170.524 38.5572 171.262 37.6924 171.496 35.9536L173.82 36.4596ZM183.672 38.1156C183.242 38.9287 182.611 39.6022 181.847 40.0641C181.083 40.5259 180.215 40.7588 179.336 40.7376C178.663 40.7597 177.994 40.6273 177.375 40.3494C176.755 40.0715 176.199 39.6547 175.745 39.1276C174.768 37.9354 174.259 36.3912 174.323 34.8128C174.251 33.2468 174.744 31.7104 175.702 30.5164C176.134 29.9935 176.668 29.5769 177.267 29.2956C177.866 29.0143 178.516 28.8752 179.171 28.888C179.826 28.8646 180.478 28.9971 181.078 29.2757C181.678 29.5543 182.212 29.972 182.64 30.498C183.581 31.708 184.063 33.2462 183.993 34.8128V35.5304H176.621C176.673 37.3704 177.636 38.6032 179.223 38.6032C179.896 38.6373 180.555 38.3933 181.062 37.9224C181.439 37.5709 181.761 37.1578 182.016 36.6988L183.672 38.1156ZM181.782 33.7088C181.795 33.3461 181.736 32.9845 181.608 32.6475C181.481 32.3104 181.289 32.0055 181.044 31.7523C180.798 31.4991 180.506 31.3033 180.185 31.1776C179.864 31.0518 179.521 30.999 179.18 31.0224C178.507 31.0224 177.861 31.3048 177.383 31.8081C176.905 32.3114 176.635 32.9947 176.63 33.7088H181.782Z" fill="white"/>
+            </svg>
+            </a>
+          <p class="tagline">LOVE YOUR CHIVES</p>
+        </div>
+         <div class="social-section">
+        <h3 class="social-title">FOLLOW US</h3>
+        <div class="social-icons">
+         {% if settings.social_instagram_link != blank %}
+            <a href="{{ settings.social_instagram_link }}" target="_blank" rel="noopener" aria-label="Instagram">
+                <img src="{{ 'instagram-icon.png' | asset_url }}" >
+            </a>
+          {% endif %}
+          
+          {% if settings.social_facebook_link != blank %}
+            <a href="{{ settings.social_facebook_link }}"target="_blank" rel="noopener" aria-label="Facebook">
+               <img src="{{ 'facebook-icon.png' | asset_url }}">
+            </a>
+          {% endif %}
+          {% if settings.social_youtube_link != blank %}
+            <a href="{{ settings.social_youtube_link }}"target="_blank" rel="noopener" aria-label="YouTube">
+              <img src="{{ 'youtube-icon.png' | asset_url }}">
+            </a>
+          {% endif %}
+          {% if settings.social_linkedin_link  != blank %}
+            <a href="{{ settings.social_linkedin_link  }}"target="_blank" rel="noopener" aria-label="LinkedIn">
+               <img src="{{ 'linkedin-icon.png' | asset_url }}">
+            </a>
+          {% endif %}
+        </div>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3>DISCOVER</h3>
+        <ul class="footer-links">
+          <li><a href="/pages/our-story">Our story</a></li>
+          <li><a href="/pages/sustainability">Sustainability</a></li>
+          <li><a href="/pages/careers">Careers</a></li>
+          <li><a href="/pages/find-my-size">Find My Size</a></li>
+          <li><a href="/pages/wholesale">Wholesale</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>SUPPORT</h3>
+        <ul class="footer-links">
+          <li><a href="/pages/contact-us">Contact us</a></li>
+          <li><a href="/pages/faq">FAQ</a></li>
+          <li><a href="/pages/shipping-delivery">Shipping and Delivery</a></li>
+          <li><a href="/pages/returns-exchanges">Returns and Exchanges</a></li>
+          <li><a href="/pages/privacy-cookies">Privacy and Cookies</a></li>
+          <li><a href="/policies/terms-of-service">Terms and Conditions</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section newsletter-section">
+        <h3>Calling all DORINA SUPERFANS!</h3>
+        <p>Sign up to be the first to hear about new products and exclusive offers.</p>
+        {% form 'customer', class: 'newsletter-form' %}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <div class="newsletter-input-group">
+            <input type="email"
+                   name="contact[email]"
+                   class="newsletter-input"
+                   value="{{ form.email }}"
+                   placeholder="Email"
+                   aria-label="Email"
+                   required>
+            <button type="submit" class="shop-now-btn">SUBSCRIBE</button>
+          </div>
+          {% if form.errors %}
+            <div class="newsletter-error">{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</div>
+          {% endif %}
+          {% if form.posted_successfully? %}
+            <div class="newsletter-success">Thank you for subscribing!</div>
+          {% endif %}
+        {% endform %}
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+  {% if section.settings.show_language_selector and section.blocks.size > 0 %}
+    <div class="language-selector">
+      <span class="language-label">{{ section.settings.language_label }}</span>
+      <div class="language-dropdown">
+        {%- assign default_language = section.blocks | where: "settings.is_default", true | first -%}
+        {%- assign first_language = section.blocks.first -%}
+        {%- assign current_language = default_language | default: first_language -%}
+        
+        <button class="language-current" id="language-toggle" aria-label="Select language">
+          {% if current_language.settings.flag_image %}
+            <img src="{{ current_language.settings.flag_image | img_url: '30x30', crop: 'center' }}" 
+                 width="30" 
+                 height="30" 
+                 class="language-flag-image"
+                 alt="{{ current_language.settings.name | escape }}"
+                 loading="lazy">
+          {% else %}
+            <div class="language-flag-placeholder"></div>
+          {% endif %}
+          <span class="language-arrow">▼</span>
+        </button>
+        
+        <div class="language-dropdown-menu" id="language-dropdown">
+          {% for block in section.blocks %}
+            {% if block.type == 'language' and block.settings.flag_image %}
+              <button class="language-option" 
+                      data-image="{{ block.settings.flag_image | img_url: '30x30', crop: 'center' }}"
+                      data-code="{{ block.settings.code }}"
+                      aria-label="{{ block.settings.name | escape }}">
+                <img src="{{ block.settings.flag_image | img_url: '30x30', crop: 'center' }}" 
+                     width="30" 
+                     height="30" 
+                     class="language-flag-image"
+                     alt="{{ block.settings.name | escape }}"
+                     loading="lazy">
+              </button>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+
+      <div class="copyright">
+        &copy; {{ 'now' | date: "%Y" }} - {{ shop.name }}
+      </div>
+
+        <div class="payment-icons">
+          {% unless shop.enabled_payment_types == empty %}
+            {% for type in shop.enabled_payment_types %}
+              {{ type | payment_type_svg_tag: class: 'payment-icon' }}
+            {% endfor %}
+          {% endunless %}
+        </div>
+    </div>
+  </div>
+</footer>
+
+{{ 'language-selector.js' | asset_url | script_tag }}
+{% schema %}
+{
+  "name": "Custom Footer",
+  "class": "footer-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Logo & Branding"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline",
+      "default": "LOVE YOUR CHIVES"
+    },
+    {
+      "type": "header",
+      "content": "Social Media"
+    },
+    {
+      "type": "text",
+      "id": "social_instagram",
+      "label": "Instagram URL",
+      "default": "https://instagram.com"
+    },
+    {
+      "type": "text",
+      "id": "social_facebook",
+      "label": "Facebook URL",
+      "default": "https://facebook.com"
+    },
+    {
+      "type": "text",
+      "id": "social_youtube",
+      "label": "YouTube URL",
+      "default": "https://www.youtube.com/"
+    },
+    {
+      "type": "text",
+      "id": "social_linkedin",
+      "label": "LinkedIn URL",
+      "default": "https://linkedin.com"
+    },
+    {
+      "type": "header",
+      "content": "Discover Menu"
+    },
+    {
+      "type": "text",
+      "id": "discover_title",
+      "label": "Discover Title",
+      "default": "DISCOVER"
+    },
+    {
+      "type": "link_list",
+      "id": "discover_menu",
+      "label": "Discover Menu",
+      "default": "footer"
+    },
+    {
+      "type": "header",
+      "content": "Support Menu"
+    },
+    {
+      "type": "text",
+      "id": "support_title",
+      "label": "Support Title",
+      "default": "SUPPORT"
+    },
+    {
+      "type": "link_list",
+      "id": "support_menu",
+      "label": "Support Menu"
+    },
+    {
+      "type": "header",
+      "content": "Newsletter"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_newsletter",
+      "label": "Show Newsletter",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "newsletter_title",
+      "label": "Newsletter Title",
+      "default": "Calling all DORINA SUPERFANS!"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_description",
+      "label": "Newsletter Description",
+      "default": "Sign up to be the first to hear about new products and exclusive offers."
+    },
+    {
+      "type": "text",
+      "id": "newsletter_placeholder",
+      "label": "Email Placeholder",
+      "default": "Email"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_button",
+      "label": "Button Text",
+      "default": "SUBSCRIBE"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_success",
+      "label": "Success Message",
+      "default": "Thank you for subscribing!"
+    },
+    {
+      "type": "header",
+      "content": "Bottom Section"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_language_selector",
+      "label": "Show Language Selector",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Payment Icons"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_payment_icons",
+      "label": "Show Payment Icons",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_visa",
+      "label": "Show Visa",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_mastercard",
+      "label": "Show Mastercard",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_amex",
+      "label": "Show American Express",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_paypal",
+      "label": "Show PayPal",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_apple_pay",
+      "label": "Show Apple Pay",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "language",
+      "name": "Language",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "flag_image",
+          "label": "Flag Image",
+          "info": "Завантажте квадратне зображення прапора 30x30 пікселів"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Language Name (for screen readers)",
+          "info": "Не відображається візуально, тільки для доступності"
+        },
+        {
+          "type": "text",
+          "id": "code",
+          "label": "Language Code",
+          "info": "Наприклад: EN, FR, DE, ES"
+        },
+        {
+          "type": "checkbox",
+          "id": "is_default",
+          "label": "Set as Default Language",
+          "default": false,
+          "info": "Ця мова буде показана за замовчуванням"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Footer",
+      "category": "Footer",
+      "blocks": [],
+      "settings": {
+        "tagline": "LOVE YOUR CHIVES",
+        "discover_title": "DISCOVER",
+        "support_title": "SUPPORT",
+        "newsletter_title": "Calling all DORINA SUPERFANS!",
+        "newsletter_description": "Sign up to be the first to hear about new products and exclusive offers."
+      }
+    }
+  ],
+  "enabled_on": {
+    "templates": ["*"],
+    "groups": ["footer"]
+  }
+}
+{% endschema %}
