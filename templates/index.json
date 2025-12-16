@@ -49,7 +49,7 @@
         "heading": "Our Collections",
         "show_pagination": true,
         "autoplay": true,
-        "autoplay_speed": 5000
+        "autoplay_speed": 5
       }
     }
   },
