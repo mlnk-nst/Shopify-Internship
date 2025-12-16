@@ -1,7 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "custom_banner": {
-      "type": "custom-banner"
+      "type": "custom-banner",
+      "settings": {
+        "left_banner": "shopify://shop_images/banner-1.jpg",
+        "left_banner_link": "",
+        "right_top_banner": "shopify://shop_images/banner-2.jpg",
+        "right_top_banner_link": "",
+        "right_bottom_banner": "shopify://shop_images/banner-3.jpg",
+        "right_bottom_banner_link": ""
+      }
     },
     "best_sellers": {
       "type": "main-bestsellers",
@@ -10,15 +27,8 @@
         "heading_size": "h2",
         "collection": "best-sellers",
         "products_to_show": 6,
-        "columns_desktop": 3,
-        "columns_mobile": "1",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": true,
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_vendor": true,
-        "show_rating": true,
-        "quick_add": "button",
+        "show_view_collection": true,
+        "button_text": "View Collection",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -29,27 +39,58 @@
         "shop_now_link": "/collections/all"
       }
     },
-      "new_arrived": {
+    "new_arrived": {
       "type": "new-arrived",
       "settings": {
         "title": "NEW ARRIVED",
-        "collection": "all",
-        "products_limit": 8,
-        "show_view_all": true,
-        "use_slider": false,
-        "slides_to_show": 4,
-        "slides_to_scroll": 1,
-        "show_dots": true,
-        "show_arrows": true
+        "heading_size": "h2",
+        "collection": "new-arrived",
+        "products_to_show": 8,
+        "enable_slider": false,
+        "show_view_collection": true,
+        "button_text": "View Collection",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
-     "collection_slider": {
+    "collection_slider": {
       "type": "collection-slider",
+      "blocks": {
+        "collection_XQe9A7": {
+          "type": "collection",
+          "settings": {
+            "collection": "shirts",
+            "custom_title": ""
+          }
+        },
+        "collection_NwMM8J": {
+          "type": "collection",
+          "settings": {
+            "collection": "sneakers",
+            "custom_title": ""
+          }
+        },
+        "collection_jXcNXF": {
+          "type": "collection",
+          "settings": {
+            "collection": "t-shirts",
+            "custom_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_XQe9A7",
+        "collection_NwMM8J",
+        "collection_jXcNXF"
+      ],
       "settings": {
-        "heading": "Our Collections",
-        "show_pagination": true,
+        "slides_to_show": 3,
+        "show_arrows": true,
+        "show_dots": true,
         "autoplay": true,
-        "autoplay_speed": 5
+        "autoplay_speed": 5,
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     }
   },
