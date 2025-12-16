@@ -1,4 +1,6 @@
 {{ 'custom-header.css' | asset_url | stylesheet_tag }}
+{{ 'mobile-menu.css' | asset_url | stylesheet_tag }}
+{{ 'desktop-menu.css' | asset_url | stylesheet_tag }}
 
 <header class="header-obxycar">
   <div class="header-container">
@@ -95,6 +97,11 @@
     </div>
   </div>
 </header>
+
+{% render 'mobile-menu' %}
+{% render 'desktop-menu' %}
+{{ 'mobile-menu.js' | asset_url | script_tag }}
+{{ 'desktop-menu.js' | asset_url | script_tag }}
 
 {% javascript %}
 (function() {

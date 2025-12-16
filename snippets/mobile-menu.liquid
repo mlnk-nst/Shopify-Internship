@@ -1,0 +1,83 @@
+<div class="mobile-menu-overlay" id="mobileMenuOverlay">
+  <div class="mobile-menu-container">
+    
+    <div class="mobile-menu-header">
+      <div class="top_menu">
+        <a href="{{ routes.search_url }}" class="search-icon-link">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+            <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
+        
+        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+      <div class="mobile-menu-section">
+        {% assign featured_collections = collections %}
+        
+        {% for collection in featured_collections %}
+          {% if collection.products_count > 0 %}
+            <div class="mobile-menu-accordion">
+              <button class="accordion-toggle">
+                <span class="collection-title">{{ collection.title }}</span>
+                <span class="accordion-arrow">▼</span>
+              </button>
+              <div class="accordion-content">
+                <div class="collection-products">
+                  {% for product in collection.products limit: 5 %}
+                    <a href="{{ product.url }}" class="product-link">
+                      <span class="product-title">{{ product.title }}</span>
+                      <span class="product-price">{{ product.price | money }}</span>
+                    </a>
+                  {% endfor %}
+                  
+                  {% if collection.products_count > 5 %}
+                    <a href="{{ collection.url }}" class="view-all">Показати всі ({{ collection.products_count }})</a>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      
+       <div class="mobile-menu-bottom">
+      <div class="mobile-menu-section account-section">
+        {% if customer %}
+          <a href="{{ routes.account_url }}" class="mobile-menu-link with-icon">
+           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 21C5 18.7909 8.13401 17 12 17C15.866 17 19 18.7909 19 21" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 13C14.7614 13 17 10.7614 17 8C17 5.23858 14.7614 3 12 3C9.23858 3 7 5.23858 7 8C7 10.7614 9.23858 13 12 13Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            ACCOUNT
+          </a>
+        {% else %}
+          <a href="{{ routes.account_login_url }}" class="mobile-menu-link with-icon">
+             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 21C5 18.7909 8.13401 17 12 17C15.866 17 19 18.7909 19 21" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 13C14.7614 13 17 10.7614 17 8C17 5.23858 14.7614 3 12 3C9.23858 3 7 5.23858 7 8C7 10.7614 9.23858 13 12 13Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            ACCOUNT
+          </a>
+        {% endif %}
+      </div>
+      
+      <div class="mobile-menu-section">
+        <a href="/pages/wishlist" class="mobile-menu-link with-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.4795 2.25C18.9232 2.25006 20.3122 2.84154 21.3906 3.93945C22.5755 5.14575 23.2611 6.86623 23.25 8.66016C23.241 10.0955 22.6743 11.7006 21.4736 13.4385C20.5457 14.7816 19.2469 16.1961 17.5996 17.6387C14.9318 19.9749 12.3037 21.559 11.999 21.7402C11.687 21.5559 9.04431 19.9711 6.37012 17.6377C4.92344 16.3754 3.74706 15.1351 2.85645 13.9453L2.49219 13.4385L2.27539 13.1133C1.2285 11.4994 0.741716 10.0061 0.75 8.66113C0.76082 6.93334 1.37216 5.32459 2.45312 4.12305C3.54978 2.90414 4.99329 2.25008 6.52051 2.25C8.47214 2.25 10.2914 3.35678 11.3525 5.16699C11.4871 5.39664 11.7338 5.53807 12 5.53809C12.2662 5.53809 12.5129 5.39664 12.6475 5.16699C13.7086 3.3568 15.5279 2.25 17.4795 2.25Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          WISHLIST
+        </a>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
