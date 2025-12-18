@@ -19,6 +19,31 @@
   margin-bottom: 40px;
 }
 
+.shop-now-btn {
+  display: inline-block;
+  color: white;
+  background: #FF8674;
+  padding: 15px 40px;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: 'Cambon', sans-serif;
+  transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.shop-now-btn:hover {
+  background: #ffffff;
+  color: #1F727C;
+  border: 1px solid #1F727C;
+}
+
+.shop-now-btn:active {
+  background: #ffffff;
+  color: #FF8674;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
 .footer-section {
   margin-bottom: 20px;
 }
